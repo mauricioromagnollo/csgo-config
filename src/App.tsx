@@ -1,10 +1,9 @@
-import player from './data/player.json'
+import { Header } from "./components";
 
 export function App() {
   return (
     <>
-      <h1>CSGO Config</h1>
-      <p>{player.name} ({player.nick})</p>
+      <Header />
     </>
   )
 }
