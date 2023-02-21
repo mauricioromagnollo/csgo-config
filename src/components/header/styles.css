@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 80vw;
   height: 100px;
   border-bottom: 1px solid var(--accent);
   gap: 10px;

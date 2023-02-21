@@ -1,0 +1,21 @@
+{
+  "monitor": {
+    "hz": "75",
+    "display": "",
+    "resolution": "",
+    "aspectRatio": "4:3",
+    "scallingMode": "Stretched"
+  },
+  "mouse": {
+    "name": "Razer Deathader",
+    "dpi": "",
+    "sens": "",
+    "hz": "",
+    "accel": "",
+    "rawInput": 1
+  },
+  "mousepad": "",
+  "keyboard": "",
+  "gpu": "",
+  "cpu": ""
+}
