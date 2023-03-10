@@ -1,8 +1,8 @@
-name: Deploy Gitub Pages
+name: Deploy GitHub Pages
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 permissions:
@@ -15,30 +15,63 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    environment:
-      name: github-pages
-      url: https://mauricioromagnollo.github.io/csgo-config
-
+  check-build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+  check-lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install Dependencies
         run: npm install
 
       - name: Run Lint
         run: npm run lint
+
+  deploy:
+    needs: check-lint
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    environment:
+      name: github-pages
+      url: https://mauricioromagnollo.github.io/csgo-config
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
 
       - name: Build
         run: npm run build
