@@ -7,6 +7,7 @@ export function Home() {
     <div id="home">
       <Header />
       <main>
+        <p>Pipeline</p>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi labore
           cupiditate earum voluptatum nulla iure odit temporibus dolorum dolorem
