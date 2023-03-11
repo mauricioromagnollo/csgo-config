@@ -1,6 +1,6 @@
 import './styles.css'
 
-import { DownloadButton, Header } from '../../components'
+import { DownloadButton, Header } from '@/components'
 
 export function Home() {
   return (
