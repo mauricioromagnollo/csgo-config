@@ -1,0 +1,26 @@
+name: Feat
+description: New feature or request
+title: "[FEAT]: "
+labels: ["feat"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to request a new feature!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What feature or request you want?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A new feature about..."
+    validations:
+      required: true

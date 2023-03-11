@@ -1,0 +1,31 @@
+name: Performance
+description: New performance improvement
+title: "[PERF]: "
+labels: ["perf"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to helps us improve the performance!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: How can we improve our performance?
+      description: Tell us what's your suggestion?
+      value: "My suggestion is..."
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Give more details or print to evidence your sugestion.
+    validations:
+      required: true
