@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temp files
+NOTES.md
+
+# Other Files
+*.7z
+*.tar.gz
+*.zip
+*.bin
+*.txt
+!robots.txt
